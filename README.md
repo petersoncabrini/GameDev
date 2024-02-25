@@ -11,7 +11,7 @@ These are projects that I used to start my familiarization with Unity, in which 
 
 It was the first game I developed in the Unity engine, in which the player controls a bucket and must collect the balls that fall and collide with obstacles. The game has a scoring system (displayed on the console) and also a game over, which happens when a count of 5 balls collides with the floor
 
-### Funcionalidades
+### Functionalities
 
 - Move character (keyboard arrows left and right)
 - Basic physics
@@ -24,7 +24,7 @@ It was the first game I developed in the Unity engine, in which the player contr
 
 This is a clone of the famous Flappy Bird game, developed using Unity. The goal is to provide a nostalgic and enjoyable experience, recreating the addictive challenge of the original game.
 
-### Funcionalidades
+### Functionalities
 
 - Move character (press space)
 - Character animations using assets from Unity Store
