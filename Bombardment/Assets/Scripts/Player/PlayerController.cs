@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     //Public properties
-    public float movementSpeed = 20f;
+    public float movementSpeed = 10f;
 
     //State machine
     [HideInInspector]
@@ -24,10 +24,14 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public Rigidbody rigidBody;
 
+    [HideInInspector]
+    public Animator animator;
+
 
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     // Start is called before the first frame update
@@ -53,6 +57,11 @@ public class PlayerController : MonoBehaviour
         var inputX = isRight ? 1 : isLeft ? -1 : 0;
 
         movementVector = new Vector2(inputX, inputY);
+
+        //Set animator velocity
+        var velocity = rigidBody.velocity.magnitude;
+        var velocityRate = velocity / movementSpeed;
+        animator.SetFloat("fVelocity", velocityRate);
 
         //State machine
         stateMachine.Update();  
