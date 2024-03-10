@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     //Public properties
-    public float movementSpeed = 10f;
+    public float movementSpeed = 20f;
 
     //State machine
     [HideInInspector]
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
         var isDown = Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow);
         var isLeft = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow);
         var isRight = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow);
-
+        
         var inputY = isUp ? 1 : isDown ? -1 : 0;
         var inputX = isRight ? 1 : isLeft ? -1 : 0;
 
@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
         var q2 = Quaternion.Euler(0, camera.transform.eulerAngles.y, 0);
         var toRotation = q1 * q2;
 
-        var newRotation = Quaternion.LerpUnclamped(transform.rotation, toRotation, 0.15f);
+        var newRotation = Quaternion.LerpUnclamped(transform.rotation, toRotation, 0.05f);
 
         //Apply rotation
         rigidBody.MoveRotation(newRotation);
